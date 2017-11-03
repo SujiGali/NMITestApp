@@ -1,0 +1,214 @@
+﻿@using NMITestApp.Models
+@model CustomerDetails
+@{
+    ViewBag.Title = "Step1";
+}
+
+<html>
+<head>
+
+    <title>Collect non-sensitive Customer Info</title>
+</head>
+<body>
+    <h2>Step One: Collect non-sensitive payment information.<br /></h2>
+    <h3> Customer Information</h3><br />
+    <div class="row text-danger">
+        @if(ViewBag.error!=null)
+        {
+            @ViewBag.error;
+        }
+    </div>
+    @using (Html.BeginForm("SubmitCustomerDetails", "Home", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <div class="row">
+                    <h4>Billing Details</h4>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.CustomerVaultId)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.CustomerVaultId)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressCompany)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressCompany)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressFirstName)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressFirstName)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressLastName)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressLastName)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4  col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressAddress1)
+                        </div>
+                        <div class="col-md-6  col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressAddress1)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressCity)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressCity)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressState)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressState)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressCountry)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressCountry)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressZip)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressZip)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressPhone)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressPhone)
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            @Html.LabelFor(m => m.BillingAddressEmail)
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            @Html.TextBoxFor(m => m.BillingAddressEmail)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-6">               
+                    <h4>Shipping Details</h4>                
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressFirstName)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressFirstName)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressLastName)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressLastName)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressAddress1)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressAddress1)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressAddress2)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressAddress2)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressCity)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressCity)
+                    </div>
+                </div><br />
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressState)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressState)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressCountry)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressCountry)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressZip)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressZip)
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        @Html.LabelFor(m => m.ShippingAddressPhone)
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        @Html.TextBoxFor(m => m.ShippingAddressPhone)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div class="row">
+            <div class="col-md-offset-6 col-md-2 col-xs-offset-6 col-xs-2">
+                @Html.Label("Total Amount")
+            </div>
+            <div class="col-md-4 col-xs-4">
+                $12.00
+            </div>
+        </div><br />
+
+        <div class="row pull-right">
+            <input type="submit" class="btn btn-primary" id="SubmitStepOne" value="Submit Customer Details" />
+        </div><br /><br /><br />
+    }
+
+</body>
+</html>

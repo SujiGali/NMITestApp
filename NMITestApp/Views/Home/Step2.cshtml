@@ -1,0 +1,58 @@
+﻿@using NMITestApp.Models
+@model CustomerDetails
+@{
+    ViewBag.Title = "Step2";
+    var formUrl = Session["formURL"].ToString();
+}
+
+<html>
+<head>
+
+    <title>Collect sensitive Payment Info</title>
+</head>
+<body>
+    <h2>Step Two: Collect sensitive payment information.<br /></h2>
+    <h3> Payment Information</h3>
+    <form action="@Session["formURL"].ToString()" method="post">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-2">
+                    Credit card number
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="billing-cc-number" value="4111111111111111" />
+                </div>
+            </div><br />
+            <div class="row">
+                <div class="col-md-2">
+                    Expiration date
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="billing-cc-exp" value="1014" />
+                </div>
+            </div><br />
+            <div class="row">
+                <div class="col-md-2">
+                    CVV
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="billing-cvv" />
+                </div>
+            </div><br />
+            <div class="row">
+                <div class="col-md-offset-4 col-md-2">
+                    @Html.Label("Total Amount")
+                </div>
+                <div class="col-md-2">
+                    $12.00
+                </div>
+            </div>
+            <div class="row pull-right">
+                <input type="submit" class="btn btn-primary" id="SubmitStepTwo" value="Submit Payment Details" />
+            </div>
+        </div>
+    </form>   
+    
+
+</body>
+</html>

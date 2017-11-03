@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Step3";
+}
+
+<html>
+<head>
+    <title>Step Three- Transaction Status</title>
+</head>
+<body>   
+    <h2>Step Three: Transaction Status</h2><br />
+
+        @if(Session["result"].Equals("1"))
+        {
+            <p><h3 class="text-success">Transaction was Approved.</h3><br />Result description:</p>
+        }
+        else if (Session["result"].Equals("2"))
+        {
+            <p><h3 class="text-danger">Transaction was Declined. </h3> <br />Decline description: </p>
+        }
+        else
+        {
+            <div><h3 class="text-danger">Transaction caused an Error.</h3> <br /> Error description:</div>
+        }
+
+
+    <label>@Session["result-text"].ToString()</label>
+    <p><h3>XML Response was:</h3></p>
+    <pre>
+    <label>@Session["data"].ToString()</label>
+    </pre>       
+   
+</body>
+</html>
+
